@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Concrete
+namespace DataAccessLayer
 {
     public class Context : DbContext
     {
@@ -19,4 +19,3 @@ namespace DataAccessLayer.Concrete
 
     }
 }
-
