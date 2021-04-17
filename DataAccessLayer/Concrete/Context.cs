@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer
+namespace DataAccessLayer.Concrete
 {
     public class Context : DbContext
     {
@@ -17,7 +17,6 @@ namespace DataAccessLayer
         public DbSet<Heading> Headings { get; set; }
         public DbSet<Writer> Writers { get; set; }
 
-
-
     }
 }
+
