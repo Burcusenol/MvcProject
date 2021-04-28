@@ -11,8 +11,8 @@ namespace DataAccessLayer.Concrete.Repositories
 {
     public class GenericRepository<T> : IRepository<T> where T : class
     {
-        Context context = new Context();
-        DbSet<T> _entity;
+          Context context = new Context();
+          DbSet<T> _entity;
         public GenericRepository()
         {
             _entity = context.Set<T>();
