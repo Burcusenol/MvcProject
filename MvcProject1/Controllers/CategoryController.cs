@@ -17,11 +17,20 @@ namespace MvcProject1.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult GetCategoryList()
         {
             var categoryvalues = categoryManager.GetAll();
             return View(categoryvalues);
         }
+        //Sayfa yüklendiğinde açılır
+        [HttpGet]
+        public ActionResult AddCategory()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public ActionResult AddCategory(Category category)
         {
             categoryManager.Add(category);
