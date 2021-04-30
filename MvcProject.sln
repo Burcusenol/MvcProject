@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcProject", "MvcProject1\MvcProject.csproj", "{5D760062-239C-4A42-A473-74B52B045015}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{442B75E6-C8DA-4A85-A6E1-B51D34051C02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{442B75E6-C8DA-4A85-A6E1-B51D34051C02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{57B29C31-CD06-4180-8D0E-B754C5C3C57C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{57B29C31-CD06-4180-8D0E-B754C5C3C57C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityLayer", "EntityLayer1\EntityLayer.csproj", "{C97D4A70-B2EA-407B-A70D-833A91DE4706}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{C97D4A70-B2EA-407B-A70D-833A91DE4706}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

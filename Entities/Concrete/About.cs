@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityLayer.Concrete
+namespace Entities.Concrete
 {
     public class About
     {

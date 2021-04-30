@@ -56,13 +56,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{57b29c31-cd06-4180-8d0e-b754c5c3c57c}</Project>
-      <Name>DataAccessLayer</Name>
+      <Name>DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EntityLayer1\EntityLayer.csproj">
+    <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{c97d4a70-b2ea-407b-a70d-833a91de4706}</Project>
-      <Name>EntityLayer</Name>
+      <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace EntityLayer.Concrete
+namespace Entities.Concrete
 {
     public class Contact
     {

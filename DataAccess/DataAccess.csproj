@@ -68,9 +68,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EntityLayer1\EntityLayer.csproj">
+    <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{c97d4a70-b2ea-407b-a70d-833a91de4706}</Project>
-      <Name>EntityLayer</Name>
+      <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

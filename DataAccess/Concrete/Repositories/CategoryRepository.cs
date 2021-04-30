@@ -1,5 +1,5 @@
-﻿using DataAccessLayer.Abstract;
-using EntityLayer.Concrete;
+﻿using DataAccess.Abstract;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Concrete.Repositories
+namespace DataAccess.Concrete.Repositories
 {
     public class CategoryRepository : ICategoryDal
     {

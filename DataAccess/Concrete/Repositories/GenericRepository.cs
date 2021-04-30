@@ -1,4 +1,4 @@
-﻿using DataAccessLayer.Abstract;
+﻿using DataAccess.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Concrete.Repositories
+namespace DataAccess.Concrete.Repositories
 {
     public class GenericRepository<T> : IRepository<T> where T : class
     {

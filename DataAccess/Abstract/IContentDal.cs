@@ -1,14 +1,13 @@
-﻿using EntityLayer.Concrete;
+﻿using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Abstract
+namespace DataAccess.Abstract
 {
-    public interface ICategoryDal:IRepository<Category>
+    public interface IContentDal:IRepository<Content>
     {
-      
     }
 }
