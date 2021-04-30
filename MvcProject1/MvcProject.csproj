@@ -200,8 +200,8 @@
       <Project>{57b29c31-cd06-4180-8d0e-b754c5c3c57c}</Project>
       <Name>DataAccessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
-      <Project>{2815ced4-d044-44c6-8fb8-6032e1abc941}</Project>
+    <ProjectReference Include="..\EntityLayer1\EntityLayer.csproj">
+      <Project>{C97D4A70-B2EA-407B-A70D-833A91DE4706}</Project>
       <Name>EntityLayer</Name>
     </ProjectReference>
   </ItemGroup>

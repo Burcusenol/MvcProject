@@ -68,8 +68,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
-      <Project>{2815ced4-d044-44c6-8fb8-6032e1abc941}</Project>
+    <ProjectReference Include="..\EntityLayer1\EntityLayer.csproj">
+      <Project>{c97d4a70-b2ea-407b-a70d-833a91de4706}</Project>
       <Name>EntityLayer</Name>
     </ProjectReference>
   </ItemGroup>
