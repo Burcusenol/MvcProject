@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer.FluentValidation
+namespace Business.FluentValidation
 {
     public class CategoryValidator:AbstractValidator<Category>
     {

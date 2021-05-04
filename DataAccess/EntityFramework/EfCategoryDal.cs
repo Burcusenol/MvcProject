@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.EntityFramework
+namespace DataAccess.EntityFramework
 {
     public class EfCategoryDal:GenericRepository<Category>,ICategoryDal
     {

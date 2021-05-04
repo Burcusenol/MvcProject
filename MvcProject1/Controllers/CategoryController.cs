@@ -1,6 +1,6 @@
 ﻿using Business.Concrete;
-using BusinessLayer.FluentValidation;
-using DataAccessLayer.EntityFramework;
+using Business.FluentValidation;
+using DataAccess.EntityFramework;
 using Entities.Concrete;
 using FluentValidation.Results;
 using System;
