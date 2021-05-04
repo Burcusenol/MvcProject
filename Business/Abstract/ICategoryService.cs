@@ -9,7 +9,9 @@ namespace Business.Abstract
 {
     public interface ICategoryService
     {
-        void İnsert(Category category);
+        void Insert(Category category);
         List<Category> GetCategories();
+
+        void CategoryAdd(Category category);
     }
 }

@@ -19,7 +19,8 @@ namespace Business.Concrete
             _categoryDal = categoryDal;
         }
 
-        public void İnsert(Category category)
+
+        public void Insert(Category category)
         {
              _categoryDal.Insert(category);
         }
@@ -27,6 +28,11 @@ namespace Business.Concrete
         public List<Category> GetCategories()
         {
             return _categoryDal.List();
+        }
+
+        public void CategoryAdd(Category category)
+        {
+            _categoryDal.Insert(category);
         }
     }
 }
