@@ -1,6 +1,5 @@
 ﻿@using Entities.Concrete
 @model  List<Category>
-    
 
 
 @{
@@ -18,13 +17,13 @@
     </tr>
 
     @foreach (var item in Model)
-    {   
+    {
         <tr>
             <td>@item.CategoryId</td>
             <td>@item.CategoryName</td>
             <td>@item.CategoryStatus</td>
-            
-            
+
+
         </tr>
 
     }
