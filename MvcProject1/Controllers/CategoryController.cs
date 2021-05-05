@@ -36,7 +36,7 @@ namespace MvcProject1.Controllers
         [HttpPost]
         public ActionResult AddCategory(Category category)
         {
-           // categoryManager.Insert(category);
+           
             CategoryValidator categoryValidator = new CategoryValidator();
             ValidationResult result = categoryValidator.Validate(category);
             if(result.IsValid)
