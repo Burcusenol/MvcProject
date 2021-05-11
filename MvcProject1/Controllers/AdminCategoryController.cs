@@ -36,7 +36,7 @@ namespace MvcProject1.Controllers
             ValidationResult validationResult = categoryValidator.Validate(category);
             if(validationResult.IsValid)
             {
-                categoryManager.CategoryAdd(category);
+                categoryManager.Insert(category);
                 return RedirectToAction("Index");
             }
             else
@@ -47,6 +47,27 @@ namespace MvcProject1.Controllers
                 }
             }
             return View();
+        }
+
+        public ActionResult DeleteCategory(int Id)
+        {
+            var result = categoryManager.GetById(Id);
+            categoryManager.Delete(result);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult UpdateCategory(int id)
+        {
+            var result=categoryManager.GetById(id);
+            return View(result);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateCategory(Category category)
+        {
+             categoryManager.Update(category);
+            return RedirectToAction("Index");
         }
     }
 }

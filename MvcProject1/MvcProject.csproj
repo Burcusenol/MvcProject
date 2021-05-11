@@ -2271,6 +2271,7 @@
     <Content Include="Theme\AdminLTE-3.0.4\plugins\toastr\toastr.js.map" />
     <Content Include="Theme\AdminLTE-3.0.4\README.md" />
     <Content Include="Views\AdminCategory\AddCategory.cshtml" />
+    <Content Include="Views\AdminCategory\UpdateCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

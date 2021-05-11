@@ -14,5 +14,6 @@ namespace DataAccess.Abstract
         void Delete(T entity);
         void Update(T entity);
         List<T> List(Expression<Func<T,bool>>filter);
+        T Get(Expression<Func<T, bool>> filter);
     }
 }

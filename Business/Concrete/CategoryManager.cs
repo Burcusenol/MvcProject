@@ -30,9 +30,19 @@ namespace Business.Concrete
             return _categoryDal.List();
         }
 
-        public void CategoryAdd(Category category)
+        public Category GetById(int Id)
         {
-            _categoryDal.Insert(category);
+            return _categoryDal.Get(c => c.CategoryId == Id);
+        }
+
+        public void Delete(Category category)
+        {
+            _categoryDal.Delete(category);
+        }
+
+        public void Update(Category category)
+        {
+            _categoryDal.Update(category);
         }
     }
 }
