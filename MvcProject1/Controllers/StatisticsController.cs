@@ -9,6 +9,7 @@ namespace MvcProject1.Controllers
 {
     public class StatisticsController : Controller
     {
+       
 
         Context context = new Context();
         // GET: Statistics
@@ -19,11 +20,12 @@ namespace MvcProject1.Controllers
             ViewBag.viewbag = result;
 
             //Başlık tablosunda "yazılım" kategorisine ait başlık sayısı
-            var result1 = context.Headings.Count(x => x.HeadingName == "Yazılım").ToString();
+            var result1 = context.Headings.Count(c=>c.CategoryId==9).ToString();
             ViewBag.viewbag1 = result1;
 
             //Yazar adında 'a' harfi geçen yazar sayısı
-            var result2 = (from w in context.Writers select w.WriterName.IndexOf("a")).Distinct().Count().ToString();
+
+            var result2 = context.Writers.Count(x => x.WriterName.Contains("a"));
             ViewBag.viewbag2 = result2;
 
             //En fazla başlığa sahip kategori adı
