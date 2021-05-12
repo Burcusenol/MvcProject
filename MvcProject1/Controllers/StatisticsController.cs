@@ -24,7 +24,6 @@ namespace MvcProject1.Controllers
             ViewBag.viewbag1 = result1;
 
             //Yazar adında 'a' harfi geçen yazar sayısı
-
             var result2 = context.Writers.Count(x => x.WriterName.Contains("a"));
             ViewBag.viewbag2 = result2;
 
