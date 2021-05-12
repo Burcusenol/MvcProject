@@ -1997,6 +1997,7 @@
     <Content Include="Theme\AdminLTE-3.0.4\plugins\toastr\toastr.min.css" />
     <Content Include="Theme\AdminLTE-3.0.4\plugins\toastr\toastr.min.js" />
     <Content Include="Theme\AdminLTE-3.0.4\starter.html" />
+    <Content Include="Theme\istatistik-odev.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2273,11 +2274,11 @@
     <Content Include="Theme\AdminLTE-3.0.4\README.md" />
     <Content Include="Views\AdminCategory\AddCategory.cshtml" />
     <Content Include="Views\AdminCategory\UpdateCategory.cshtml" />
+    <Content Include="Views\Statistics\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Statistics\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

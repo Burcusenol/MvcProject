@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<div class="card-deck">
+    <div class="card text-white bg-info mb-md-4 " style="width: 18rem;">
+        <img src="~/Theme/istatistik-odev.jpg" />
+        <div class="card-body">
+            <h5 class="card-title">Toplam Kategori Sayısı</h5>
+            <br />
+            <h5 class="card-text"> @ViewBag.viewbag</h5>
+        </div>
+    </div>
+    <div class="card text-white bg-gradient-olive mb-md-4 " style="width: 18rem">
+        <img class="card-img-top" src="~/Theme/istatistik-odev.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Yazılım Kategorisi Başlık Sayısı</h5>
+            <br />
+            <h5 class="card-text"> @ViewBag.viewbag1</h5>
+        </div>
+    </div>
+    <div class="card text-white bg-gradient-red mb-md-4 " style="width: 18rem ">
+        <img class="card-img-top" src="~/Theme/istatistik-odev.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"> İsimlerinde "A" Harfi Bulunanlar Yazarlar</h5>
+            <br />
+            <h5 class="card-text"> @ViewBag.viewbag2</h5>
+        </div>
+    </div>
+
+    <div class="card text-white bg-orange mb-md-4 " style="width: 18rem">
+        <img class="card-img-top" src="~/Theme/istatistik-odev.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">En Fazla Başlığı Olan Kategori Adı</h5>
+            <br />
+            <h5 class="card-text"> @ViewBag.viewbag3</h5>
+        </div>
+    </div>
+
+    <div class="card text-white bg-gradient-purple mb-md-4 " style="width: 18rem">
+        <img class="card-img-top" src="~/Theme/istatistik-odev.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Kategoriler Tablosunda T/F Farkı </h5>
+            <br />
+            <h5 class="card-text"> @ViewBag.viewbag4</h5>
+        </div>
+    </div>
+</div>
+
+
+
