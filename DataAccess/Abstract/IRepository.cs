@@ -9,7 +9,7 @@ namespace DataAccess.Abstract
 {
     public interface IRepository<T>
     {
-        List<T> List();
+        List<T> GetAll();
         void Insert(T entity);
         void Delete(T entity);
         void Update(T entity);

@@ -31,7 +31,7 @@ namespace DataAccess.Concrete.Repositories
             context.SaveChanges();
         }
 
-        public List<Category> List()
+        public List<Category> GetAll()
         {
             return _category.ToList();
         }
