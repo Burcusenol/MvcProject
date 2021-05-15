@@ -24,7 +24,7 @@ namespace Business.FluentValidation
 
         private bool AboutContains(string arg)
         {
-            return arg.Contains("A");
+            return arg.Contains("a");
         }
 
     }
