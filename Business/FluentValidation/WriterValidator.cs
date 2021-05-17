@@ -17,7 +17,7 @@ namespace Business.FluentValidation
             RuleFor(w => w.WriterAbout).NotEmpty().WithMessage("Hakkımda kısmını boş geçilemez.");
             RuleFor(w => w.WriterName).MinimumLength(2).WithMessage("Yazar adı minimum 2 karakter olmalıdır.");
             RuleFor(w => w.WriterSurName).MaximumLength(50).WithMessage("Yazar soyadı adı maximum 50 karakter olabilir.");
-            RuleFor(w => w.WriterAbout).Must(AboutContains).WithMessage("Yazar hakkında kısmı 'A' harfi içermelidir.");
+            RuleFor(w => w.WriterAbout).Must(AboutContains).WithMessage("Yazar hakkında kısmı 'a' harfi içermelidir.");
 
 
         }
