@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Entities.Concrete
@@ -11,7 +13,8 @@ namespace Entities.Concrete
 
         [StringLength(50)]
         public string HeadingName { get; set; }
-        public DateTime HeadingDate { get; set; }
+
+        public DateTime HeadingDate  { get; set; }
 
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
