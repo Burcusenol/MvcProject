@@ -134,6 +134,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminCategoryController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\HeadingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
@@ -165,6 +166,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Theme\10_avatar-512.png" />
+    <Content Include="Theme\221-2212244_professional-woman-cartoon-png.png" />
     <Content Include="Theme\AdminLTE-3.0.4\.gitignore" />
     <Content Include="Theme\AdminLTE-3.0.4\build\config\postcss.config.js" />
     <Content Include="Theme\AdminLTE-3.0.4\build\config\rollup.config.js" />
@@ -1999,6 +2002,8 @@
     <Content Include="Theme\AdminLTE-3.0.4\plugins\toastr\toastr.min.css" />
     <Content Include="Theme\AdminLTE-3.0.4\plugins\toastr\toastr.min.js" />
     <Content Include="Theme\AdminLTE-3.0.4\starter.html" />
+    <Content Include="Theme\black-woman.png" />
+    <Content Include="Theme\depositphotos_130637000-stock-illustration-businessman-in-office.jpg" />
     <Content Include="Theme\istatistik-odev.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -2282,6 +2287,8 @@
     <Content Include="Views\Writer\UpdateWriter.cshtml" />
     <Content Include="Views\Heading\Index.cshtml" />
     <Content Include="Views\Heading\AddHeading.cshtml" />
+    <Content Include="Views\Heading\ContentByHeading.cshtml" />
+    <Content Include="Views\Content\ContentByHeading.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -50,5 +50,7 @@ namespace MvcProject1.Controllers
             headingManager.Insert(heading);
             return RedirectToAction("Index");
         }
+
+        
     }
 }

@@ -35,7 +35,7 @@ namespace Business.Concrete
 
         public void Insert(Heading heading)
         {
-             DateAdded(heading);
+             
             _headingDal.Insert(heading);
         }
 
@@ -44,9 +44,6 @@ namespace Business.Concrete
             _headingDal.Update(heading);
         }
 
-        private void DateAdded(Heading heading)
-        {
-              heading.HeadingDate = DateTime.Parse(DateTime.Now.ToLongTimeString());
-        }
+       
     }
 }
