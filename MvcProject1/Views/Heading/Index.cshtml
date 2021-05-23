@@ -63,13 +63,13 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                                    if(item.Category.CategoryName=="Sosyal Medya")
+                                    if (item.Category.CategoryName == "Sosyal Medya")
                                     {
-                                        color = "badge badge-warning";
+                                        color = "badge bg-indigo";
                                     }
-                                    if(item.Category.CategoryName=="Spor")
+                                    if (item.Category.CategoryName == "Spor")
                                     {
-                                        color = "badge bg-gradient-orange";
+                                        color = "badge bg-orange";
                                     }
                                     if (item.Category.CategoryName == "Yazılım")
                                     {
@@ -79,70 +79,70 @@
                                     {
                                         color = "badge badge-secondary";
                                     }
-                                    if (item.Category.CategoryName =="Eğitim")
+                                    if (item.Category.CategoryName == "Eğitim")
                                     {
-                                        color = "badge badge-primary";
+                                        color = "badge bg-gradient-fuchsia";
                                     }
-                                    if (item.Category.CategoryName =="Dizi")
+                                    if (item.Category.CategoryName == "Dizi")
                                     {
                                         color = "badge badge-danger";
                                     }
-                                    if (item.Category.CategoryName =="Tiyatro")
+                                    if (item.Category.CategoryName == "Tiyatro")
                                     {
                                         color = "badge bg-gradient-olive";
                                     }
-                                    if (item.Category.CategoryName == "Kitap")
+                                    if (item.Category.CategoryName== "Kitap")
                                     {
                                         color = "badge badge-info";
                                     }
-                                    if (item.Category.CategoryName=="Film")
+                                    if (item.Category.CategoryName == "Film")
                                     {
-                                        color = "badge bg-gradient-gray";
+                                        color = "badge bg-pink ";
                                     }
-                                <tr>
-                                    <td>
-                                        @item.HeadingId
-                                    </td>
-                                    <td>
-                                        <a>
-                                            @item.HeadingName
-                                        </a>
-                                        <br />
-                                        <small>
-                                            @(((DateTime)item.HeadingDate).ToString("dd-MMM-yyyy"))
-                                           
-                                        </small>
-                                    </td>
-                                    <td>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <img alt="Avatar" class="table-avatar" src="@item.Writer.WriterImage">
-                                            </li>
+                                    <tr>
+                                        <td>
+                                            @item.HeadingId
+                                        </td>
+                                        <td>
+                                            <a>
+                                                @item.HeadingName
+                                            </a>
+                                            <br />
+                                            <small>
+                                                @(((DateTime)item.HeadingDate).ToString("dd-MMM-yyyy"))
 
-                                        </ul>
-                                    </td>
-                                    <td class="project-state">
-                                        <span class="@color">@item.Category.CategoryName</span>
-                                    </td>
-                                    <td class="project-actions text-right">
-                                        <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingId">
-                                            <i class="fas fa-folder">
-                                            </i>
-                                            İçerik
-                                        </a>
-                                        <a class="btn btn-info btn-sm" href="#">
-                                            <i class="fas fa-pencil-alt">
-                                            </i>
-                                            Düzenle
-                                        </a>
-                                        <a class="btn btn-danger btn-sm" href="#">
-                                            <i class="fas fa-trash">
-                                            </i>
-                                            Sil
-                                        </a>
-                                    </td>
-                                </tr>
-                                 }
+                                            </small>
+                                        </td>
+                                        <td>
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">
+                                                    <img alt="Avatar" class="table-avatar" src="@item.Writer.WriterImage">
+                                                </li>
+
+                                            </ul>
+                                        </td>
+                                        <td class="project-state">
+                                            <span class="@color" >@item.Category.CategoryName</span>
+                                        </td>
+                                        <td class="project-actions text-right">
+                                            <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingId">
+                                                <i class="fas fa-folder">
+                                                </i>
+                                                İçerik
+                                            </a>
+                                            <a class="btn btn-info btn-sm" href="#">
+                                                <i class="fas fa-pencil-alt">
+                                                </i>
+                                                Düzenle
+                                            </a>
+                                            <a class="btn btn-danger btn-sm" href="#">
+                                                <i class="fas fa-trash">
+                                                </i>
+                                                Sil
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
                             </tbody>
                         </table>
                     </div>
