@@ -22,5 +22,7 @@ namespace MvcProject1.Controllers
             var result = contentManager.GetListById(id);
             return View(result);
         }
+
+        
     }
 }
