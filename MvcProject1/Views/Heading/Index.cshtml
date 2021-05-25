@@ -9,6 +9,7 @@
 @{  string color = "";
     string statusColor = "";
     string checkStatus = "";
+    string buttonStatusColor = "";
 }
 
 <!DOCTYPE html>
@@ -106,6 +107,7 @@
                                         color = "badge bg-pink ";
                                     }
 
+
                                     <tr>
                                         <td>
                                             @item.HeadingId
@@ -132,15 +134,16 @@
                                             @switch (item.HeadingStatus)
                                             {
                                                 case true:
-                                                    statusColor = "badge badge-info";
+                                                    statusColor = "badge badge-success";
+                                                    buttonStatusColor = "btn btn-danger";
                                                     break;
 
                                                 case false:
                                                     statusColor = "badge badge-danger";
+                                                    buttonStatusColor = "btn btn-success";
                                                     break;
                                             }
                                             <span class="@statusColor">@item.HeadingStatus</span>
-
                                         </td>
                                         <td class="project-state">
                                             <span class="@color">@item.Category.CategoryName</span>
@@ -156,7 +159,7 @@
                                                 </i>
                                                 Düzenle
                                             </a>
-                                            <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingId">
+                                            <a class="@buttonStatusColor btn-sm" href="/Heading/DeleteHeading/@item.HeadingId">
                                                 <i class="fas fa-trash">
                                                 </i>
                                                 @if (item.HeadingStatus == false)
@@ -164,7 +167,7 @@
 
                                                     checkStatus = "Aktif Yap";
                                                 }
-                                                else 
+                                                else
                                                 {
                                                     checkStatus = "Pasif Yap";
                                                 }
