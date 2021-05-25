@@ -47,6 +47,7 @@ namespace MvcProject1.Controllers
         [HttpPost]
         public ActionResult AddHeading(Heading heading)
         {
+            heading.HeadingDate = DateTime.Now;
             headingManager.Insert(heading);
             return RedirectToAction("Index");
         }
