@@ -1,5 +1,6 @@
-﻿using BusinessLayer.Concrete;
-using BusinessLayer.FluentValidation;
+﻿using Business.Concrete;
+using Business.FluentValidation;
+using DataAccess.Concrete;
 using DataAccess.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace MvcProject1.Controllers
 {
     public class ContactController : Controller
     {
+        Context context = new Context();
         ContactManager contactManager = new ContactManager(new EfContactDal());
         ContactValidator contactValidation = new ContactValidator();
         // GET: Contact
@@ -29,6 +31,14 @@ namespace MvcProject1.Controllers
 
         public PartialViewResult ContactPartial()
         {
+            var contact = context.Contacts.Count().ToString();
+            ViewBag.contact = contact;
+
+            var sendMail = context.Messages.Count(m => m.SenderMail == "admin@gmail.com").ToString();
+            ViewBag.sendMail = sendMail;
+
+            var receiverMail = context.Messages.Count(m => m.ReceiverMail == "admin@gmail.com").ToString();
+            ViewBag.receiverMail = receiverMail;
             return PartialView();
         }
     }

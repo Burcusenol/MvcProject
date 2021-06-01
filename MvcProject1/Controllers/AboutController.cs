@@ -1,6 +1,8 @@
-﻿using BusinessLayer.Concrete;
+﻿using Business.Concrete;
+using Business.FluentValidation;
 using DataAccess.EntityFramework;
 using Entities.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,8 +31,21 @@ namespace MvcProject1.Controllers
         [HttpPost]
         public ActionResult AddAbout(About about)
         {
-            aboutManager.Insert(about);
-            return RedirectToAction("Index");
+            AboutValidator aboutValidator = new AboutValidator();
+            ValidationResult validationResult = aboutValidator.Validate(about);
+            if (validationResult.IsValid)
+            {
+                aboutManager.Insert(about);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var error in validationResult.Errors)
+                {
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
+            }
+            return View();
         }
 
         public PartialViewResult AboutPartial()

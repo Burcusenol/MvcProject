@@ -1,4 +1,4 @@
-﻿using BusinessLayer.Abstract;
+﻿using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer.Concrete
+namespace Business.Concrete
 {
     public class AboutManager : IAboutService
     {

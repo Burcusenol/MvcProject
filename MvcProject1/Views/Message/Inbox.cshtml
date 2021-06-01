@@ -1,13 +1,12 @@
 ﻿@using Entities.Concrete
-@model List<Contact>
-
+@model List<Message>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inbox";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html>
 
 <body class="hold-transition sidebar-mini">
@@ -80,13 +79,13 @@
                                                     <label for="check1"></label>
                                                 </div>
                                             </td>
-                                            <td class="mailbox-star"><a href="/Contact/GetContactDetails/@item.ContactId"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/Contact/GetContactDetails/@item.ContactId">@item.UserName</a></td>
+                                            <td class="mailbox-star"><a href="/Contact/GetContactDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name"><a href="/Message/GetMessageDetails/@item.MessageId">@item.SenderMail</a></td>
                                             <td class="mailbox-subject">
-                                                <b>@item.Subject</b> - @item.Message.Substring(0, 30)...
+                                                <b>@item.Subject</b> - @item.MessageContent.Substring(0, 10)...
                                             </td>
                                             <td class="mailbox-attachment"></td>
-                                            <td class="mailbox-date">5 mins ago <td>
+                                            <td class="mailbox-date">@item.MessageDate</td>
                                         </tr>
                                     }
                                 </tbody>
