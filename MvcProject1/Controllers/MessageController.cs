@@ -43,11 +43,13 @@ namespace MvcProject1.Controllers
         [HttpPost]
         public ActionResult NewMessage(Message message)
         {
+          
             ValidationResult validationResult = messageValidator.Validate(message);
             if (validationResult.IsValid)
             {
+                message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                 messageManager.Insert(message);
-                return RedirectToAction("Index");
+                return RedirectToAction("Sendbox");
             }
             else
             {
@@ -59,4 +61,5 @@ namespace MvcProject1.Controllers
             return View();
         }
     }
+    
 }
