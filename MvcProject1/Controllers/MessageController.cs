@@ -41,24 +41,81 @@ namespace MvcProject1.Controllers
         }
 
         [HttpPost]
-        public ActionResult NewMessage(Message message)
+        public ActionResult NewMessage(Message message, string button)
         {
-          
             ValidationResult validationResult = messageValidator.Validate(message);
-            if (validationResult.IsValid)
+            if (button == "add")
             {
-                message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-                messageManager.Insert(message);
-                return RedirectToAction("Sendbox");
+                if (validationResult.IsValid)
+                {
+                    message.SenderMail = "admin@gmail.com";
+                    message.IsDraft = false;
+                    message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                    messageManager.Insert(message);
+                    return RedirectToAction("Sendbox");
+                }
+                else
+                {
+                    foreach (var item in validationResult.Errors)
+                    {
+                        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                    }
+                }
+            }
+
+            else if (button == "draft")
+            {
+                if (validationResult.IsValid)
+                {
+
+                    message.SenderMail = "admin@gmail.com";
+                    message.IsDraft = true;
+                    message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                    messageManager.Insert(message);
+                    return RedirectToAction("Draft");
+                }
+                else
+                {
+                    foreach (var item in validationResult.Errors)
+                    {
+                        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                    }
+                }
+            }
+            else if (button == "cancel")
+            {
+                return RedirectToAction("NewMessage");
+            }
+
+            return View();
+        }
+
+        public ActionResult DeleteMessage(int id)
+        {
+            var result = messageManager.GetById(id);
+            if (result.Trash == true)
+            {
+                result.Trash = false;
             }
             else
             {
-                foreach (var error in validationResult.Errors)
-                {
-                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
-                }
+                result.Trash = true;
             }
-            return View();
+            messageManager.Delete(result);
+            return RedirectToAction("Inbox");
+
+        }
+
+        public ActionResult Draft()
+        {
+            var result = messageManager.IsDraft();
+            return View(result);
+        }
+
+        public ActionResult GetDraftDetails(int id)
+        {
+            var result = messageManager.GetById(id);
+            return View(result);
         }
     }
     

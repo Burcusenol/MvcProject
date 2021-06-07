@@ -2507,6 +2507,8 @@
     <Content Include="Theme\summernote-0.8.18-dist\summernote-lite.min.js.map" />
     <Content Include="Theme\summernote-0.8.18-dist\summernote.js.map" />
     <Content Include="Theme\summernote-0.8.18-dist\summernote.min.js.map" />
+    <Content Include="Views\Message\Draft.cshtml" />
+    <Content Include="Views\Message\GetDraftDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

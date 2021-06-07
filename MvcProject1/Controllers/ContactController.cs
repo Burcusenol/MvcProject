@@ -12,8 +12,8 @@ namespace MvcProject1.Controllers
 {
     public class ContactController : Controller
     {
-        Context context = new Context();
         ContactManager contactManager = new ContactManager(new EfContactDal());
+        MessageManager messageManager = new MessageManager(new EfMessageDal());
         ContactValidator contactValidation = new ContactValidator();
         // GET: Contact
         public ActionResult Index()
@@ -31,14 +31,17 @@ namespace MvcProject1.Controllers
 
         public PartialViewResult ContactPartial()
         {
-            var contact = context.Contacts.Count().ToString();
+            var contact = contactManager.GetContacts().Count();
             ViewBag.contact = contact;
 
-            var sendMail = context.Messages.Count(m => m.SenderMail == "admin@gmail.com").ToString();
+            var sendMail = messageManager.GetMessageSendBox().Count();
             ViewBag.sendMail = sendMail;
 
-            var receiverMail = context.Messages.Count(m => m.ReceiverMail == "admin@gmail.com").ToString();
+            var receiverMail = messageManager.GetMessagesInbox().Count();
             ViewBag.receiverMail = receiverMail;
+
+            var draftMail = messageManager.GetMessageSendBox().Where(m => m.IsDraft == true).Count();
+            ViewBag.draftMail = draftMail;
             return PartialView();
         }
     }

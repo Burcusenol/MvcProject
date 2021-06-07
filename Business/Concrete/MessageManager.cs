@@ -43,6 +43,11 @@ namespace Business.Concrete
             _messageDal.Insert(message);
         }
 
+        public List<Message> IsDraft()
+        {
+            return _messageDal.List(m => m.IsDraft == true);
+        }
+
         public void Update(Message message)
         {
             _messageDal.Update(message);

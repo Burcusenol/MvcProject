@@ -74,6 +74,14 @@
     <Compile Include="Migrations\202106041410229_add_image.Designer.cs">
       <DependentUpon>202106041410229_add_image.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106071303312_add_draft.cs" />
+    <Compile Include="Migrations\202106071303312_add_draft.Designer.cs">
+      <DependentUpon>202106071303312_add_draft.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106071433501_add-trash.cs" />
+    <Compile Include="Migrations\202106071433501_add-trash.Designer.cs">
+      <DependentUpon>202106071433501_add-trash.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -90,6 +98,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106041410229_add_image.resx">
       <DependentUpon>202106041410229_add_image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106071303312_add_draft.resx">
+      <DependentUpon>202106071303312_add_draft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106071433501_add-trash.resx">
+      <DependentUpon>202106071433501_add-trash.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
