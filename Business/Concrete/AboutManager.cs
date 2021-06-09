@@ -25,7 +25,7 @@ namespace Business.Concrete
 
         public void Delete(About about)
         {
-            _aboutDal.Delete(about);
+            _aboutDal.Update(about);
         }
 
         public List<About> GetAbouts()

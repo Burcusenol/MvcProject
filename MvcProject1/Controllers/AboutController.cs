@@ -48,6 +48,21 @@ namespace MvcProject1.Controllers
             return View();
         }
 
+        public ActionResult UpdateAbout(int id)
+        {
+            var result = aboutManager.GetById(id);
+            if (result.AboutStatus == true)
+            {
+                result.AboutStatus = false;
+            }
+            else
+            {
+                result.AboutStatus = true;
+            }
+            aboutManager.Update(result);
+            return RedirectToAction("Index");
+        }
+
         public PartialViewResult AboutPartial()
         {
             return PartialView();

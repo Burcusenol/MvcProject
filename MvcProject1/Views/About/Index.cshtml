@@ -7,24 +7,55 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+@{ 
+    string statusColor = "";
+    string buttonStatusColor = "";
+    string checkStatus = "";
+}
+
 <h2>Hakkımda Veri Listesi</h2>
 
 <table class="table table-bordered">
     <tr>
         <th>Id</th>
         <th>Hakkımda Başlığı</th>
+        <th>Durum</th>
         <th>Aktif Yap</th>
-        <th>Pasif Yap</th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
             <td>@item.AboutId</td>
-            <td>Başlık</td>
-            <td><a  href="#" class="btn btn-success">Aktif Yap</a></td>
-            <td><a href="#" class="btn btn-danger">Pasif Yap</a></td>
-        </tr>
-    }
+            <td>@item.AboutDetails1</td>
+            <td>
+                @switch (item.AboutStatus)
+                {
+                    case true:
+                        statusColor = "badge badge-success";
+                        buttonStatusColor = "btn btn-danger";
+                        break;
+                    case false:
+                        statusColor = "badge badge-danger";
+                        buttonStatusColor = "btn btn-success";
+                        break;
+                }
+                <span class="@statusColor">@item.AboutStatus</span>
+            </td>
+            <td><a href="/About/UpdateAbout/@item.AboutId" class="@buttonStatusColor btn-sm">
+                 @if (item.AboutStatus == false)
+                {
+
+                    checkStatus = "Aktif Yap";
+                }
+                 else
+                 {
+        
+                    checkStatus = "Pasif Yap";
+                    }
+                 @checkStatus
+</a></td>
+             </tr>
+        }
 </table>
 
-@Html.Action("AboutPartial","About")
+@Html.Action("AboutPartial", "About")
