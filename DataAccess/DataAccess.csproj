@@ -82,6 +82,10 @@
     <Compile Include="Migrations\202106071433501_add-trash.Designer.cs">
       <DependentUpon>202106071433501_add-trash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106091325110_add_admin_table.cs" />
+    <Compile Include="Migrations\202106091325110_add_admin_table.Designer.cs">
+      <DependentUpon>202106091325110_add_admin_table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -104,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106071433501_add-trash.resx">
       <DependentUpon>202106071433501_add-trash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106091325110_add_admin_table.resx">
+      <DependentUpon>202106091325110_add_admin_table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
