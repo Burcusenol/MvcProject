@@ -2088,6 +2088,16 @@
     <Content Include="Theme\AdminLTE-3.0.4\plugins\toastr\toastr.css" />
     <Content Include="Theme\AdminLTE-3.0.4\plugins\toastr\toastr.min.css" />
     <Content Include="Theme\AdminLTE-3.0.4\plugins\toastr\toastr.min.js" />
+    <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\css\style.css" />
+    <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\images\5.jpg" />
+    <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\images\img1.jpg" />
+    <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\images\sprite.png" />
+    <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\index.html" />
+    <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\js\bars.js" />
+    <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\js\easyResponsiveTabs.js" />
+    <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\js\jquery-1.11.1.min.js" />
+    <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\js\jquery.circlechart.js" />
+    <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\w3layouts-License.txt" />
     <Content Include="Theme\AdminLTE-3.0.4\starter.html" />
     <Content Include="Theme\black-woman.png" />
     <Content Include="Theme\depositphotos_130637000-stock-illustration-businessman-in-office.jpg" />
