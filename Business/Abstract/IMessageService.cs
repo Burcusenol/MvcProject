@@ -15,6 +15,7 @@ namespace Business.Abstract
         void Update(Message message);
         Message GetById(int Id);
         List<Message> GetMessageSendBox();
+        List<Message> GetAllRead();
         List<Message> IsDraft();
     }
 }

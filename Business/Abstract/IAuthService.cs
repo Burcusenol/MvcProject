@@ -10,7 +10,11 @@ namespace Business.Abstract
 {
     public interface IAuthService
     {
-        void Login(Admin admin);
+        void Add(Admin admin);
+        void Update(Admin admin);
+        void Delete(Admin admin);
+        List<Admin> GetAdmins();
+        Admin GetById(int id);
      
 
     }

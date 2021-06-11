@@ -17,7 +17,8 @@ namespace Business.FluentValidation
             RuleFor(m => m.MessageContent).NotEmpty().WithMessage("Mesaj boş geçilmez.");
             RuleFor(m => m.Subject).MinimumLength(3).WithMessage("Konu minimum 3 karakter olmalıdır.");
             RuleFor(m => m.Subject).MaximumLength(100).WithMessage("Konu maximum 100 karakter olmalıdır. ");
-          //  RuleFor(m => m.SenderMail).NotEmpty().WithMessage("Gönderen adı boş geçilmez.");
+           
+            
         }
     }
 }

@@ -23,6 +23,11 @@ namespace Business.Concrete
             _messageDal.Delete(message);
         }
 
+        public List<Message> GetAllRead()
+        {
+            return _messageDal.List(m => m.ReceiverMail == "admin@gail.com").Where(m => m.IsRead == false).ToList();
+        }
+
         public Message GetById(int Id)
         {
            return  _messageDal.Get(m => m.MessageId == Id);

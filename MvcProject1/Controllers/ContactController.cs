@@ -42,6 +42,12 @@ namespace MvcProject1.Controllers
 
             var draftMail = messageManager.GetMessageSendBox().Where(m => m.IsDraft == true).Count();
             ViewBag.draftMail = draftMail;
+
+            var readMessage = messageManager.GetMessagesInbox().Where(m => m.IsRead == true).Count();
+            ViewBag.readMessage = readMessage;
+
+            var unreadMessage = messageManager.GetAllRead().Count();
+            ViewBag.unreadMessage = unreadMessage;
             return PartialView();
         }
     }

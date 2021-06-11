@@ -13,10 +13,36 @@ namespace Business.Concrete
 {
     public class AuthManager : IAuthService
     {
-        
-        public void Login(Admin admin)
+        ILoginDal _loginDal;
+
+        public AuthManager(ILoginDal loginDal)
         {
-           
+            _loginDal = loginDal;
+        }
+
+        public void Add(Admin admin)
+        {
+            _loginDal.Insert(admin);
+        }
+
+        public void Delete(Admin admin)
+        {
+            _loginDal.Delete(admin);
+        }
+
+        public List<Admin> GetAdmins()
+        {
+            return _loginDal.GetAll();
+        }
+
+        public Admin GetById(int id)
+        {
+            return _loginDal.Get(a => a.AdminId == id);
+        }
+
+        public void Update(Admin admin)
+        {
+            _loginDal.Update(admin);
         }
     }
 }

@@ -5,6 +5,9 @@
     ViewBag.Title = "Inbox";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+@{ string message = "";
+   string color = "";}
+
 
 <!DOCTYPE html>
 <html>
@@ -72,12 +75,32 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
+                                        if (item.IsRead == false)
+                                        {
+
+                                            message = "Okundu olarak İşaretle";
+                                        }
+                                        if (item.IsRead == true)
+                                        {
+                                            message = "Okundu olarak İşaretlendi";
+                                        }
+                                        if (item.IsRead == false)
+                                        {
+                                            color = "btn btn-info btn-sm";
+                                        }
+                                        if (item.IsRead == true)
+                                        {
+                                            color = "btn btn-danger btn-sm";
+                                        }
+
+
                                         <tr>
-                                            <td>
+                                            <td> 
                                                 <div class="icheck-primary">
-                                                    <input type="checkbox" value="" id="check1">
+                                                    <input type="checkbox" value="check" name="read" checked="@item.IsRead" id="check1">
                                                     <label for="check1"></label>
                                                 </div>
+
                                             </td>
                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
                                             <td class="mailbox-name"><a href="/Message/GetMessageDetails/@item.MessageId">@item.SenderMail</a></td>
