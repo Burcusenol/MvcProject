@@ -126,7 +126,10 @@ namespace MvcProject1.Controllers
             {
                 result.IsRead = true;
             }
-
+            else
+            {
+                result.IsRead = false;
+            }
             messageManager.Update(result);
             return RedirectToAction("Inbox");
         }
