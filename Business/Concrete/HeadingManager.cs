@@ -28,6 +28,11 @@ namespace Business.Concrete
             return _headingDal.Get(h => h.HeadingId == id);
         }
 
+        public List<Heading> GetHeadingByWriter()
+        {
+            return _headingDal.List(h=>h.WriterId==4);
+        }
+
         public List<Heading> GetHeadings()
         {
             return _headingDal.GetAll();

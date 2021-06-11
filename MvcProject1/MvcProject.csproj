@@ -145,6 +145,9 @@
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
+    <Compile Include="Controllers\WriterPanelContentController.cs" />
+    <Compile Include="Controllers\WriterPanelController.cs" />
+    <Compile Include="Controllers\WriterPanelMessageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2874,6 +2877,17 @@
     <Content Include="Theme\AdminLTE-3.0.4\login-form-19\__MACOSX\login-form-19\scss\bootstrap\utilities\.__text.scss" />
     <Content Include="Theme\AdminLTE-3.0.4\login-form-19\__MACOSX\login-form-19\scss\bootstrap\utilities\.__visibility.scss" />
     <Content Include="Theme\AdminLTE-3.0.4\login-form-19\__MACOSX\login-form-19\scss\bootstrap\vendor\.__rfs.scss" />
+    <Content Include="Views\Shared\_WriterLayout.cshtml" />
+    <Content Include="Views\WriterPanel\WriterProfile.cshtml" />
+    <Content Include="Views\WriterPanel\MyHeading.cshtml" />
+    <Content Include="Views\WriterPanel\HeadingAdd.cshtml" />
+    <Content Include="Views\WriterPanel\UpdateHeading.cshtml" />
+    <Content Include="Views\WriterPanelMessage\WriterInbox.cshtml" />
+    <Content Include="Views\WriterPanelMessage\MessagePartial.cshtml" />
+    <Content Include="Views\WriterPanelMessage\WriterSendBox.cshtml" />
+    <Content Include="Views\WriterPanelMessage\GetWriterMessageDetails.cshtml" />
+    <Content Include="Views\WriterPanelMessage\AddMessage.cshtml" />
+    <Content Include="Views\WriterPanelContent\MyContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

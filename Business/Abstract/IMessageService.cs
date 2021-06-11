@@ -17,5 +17,6 @@ namespace Business.Abstract
         List<Message> GetMessageSendBox();
         List<Message> GetAllRead();
         List<Message> IsDraft();
+
     }
 }

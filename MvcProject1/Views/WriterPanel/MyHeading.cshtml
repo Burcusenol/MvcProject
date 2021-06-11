@@ -2,14 +2,13 @@
 @model List<Heading>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "MyHeading";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 
-@{  string color = "";
-    string statusColor = "";
-    string checkStatus = "";
-    string buttonStatusColor = "";
+
+
+@{ string color = "";
 }
 
 <!DOCTYPE html>
@@ -56,9 +55,6 @@
                             </th>
                             <th style="width: 15%">
                                 Oluşturan Yazar
-                            </th>
-                            <th style="width: 10%">
-                                Durum
                             </th>
                             <th style="width: 8%" class="text-center">
                                 Kategori
@@ -129,20 +125,6 @@
 
                                     </ul>
                                 </td>
-                                <td>
-                                    @switch (item.HeadingStatus)
-                                    {
-                                        case true:
-                                            statusColor = "badge badge-success";
-                                            buttonStatusColor = "btn btn-danger";
-                                            break;
-                                        case false:
-                                            statusColor = "badge badge-danger";
-                                            buttonStatusColor = "btn btn-success";
-                                            break;
-                                    }
-                                    <span class="@statusColor">@item.HeadingStatus</span>
-                                </td>
                                 <td class="project-state">
                                     <span class="@color">@item.Category.CategoryName</span>
                                 </td>
@@ -152,24 +134,15 @@
                                         </i>
                                         İçerik
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="/Heading/UpdateHeading/@item.HeadingId">
+                                    <a class="btn btn-info btn-sm" href="/WriterPanel/UpdateHeading/@item.HeadingId">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Düzenle
                                     </a>
-                                    <a class="@buttonStatusColor btn-sm" href="/Heading/DeleteHeading/@item.HeadingId">
+                                    <a class="btn btn-danger btn-sm" href="/WriterPanel/DeleteHeading/@item.HeadingId">
                                         <i class="fas fa-trash">
                                         </i>
-                                        @if (item.HeadingStatus == false)
-                                        {
-
-                                            checkStatus = "Aktif Yap";
-                                        }
-                                        else
-                                        {
-                                            checkStatus = "Pasif Yap";
-                                        }
-                                        @checkStatus
+                                        Sil
                                     </a>
                                 </td>
                             </tr>
@@ -185,6 +158,5 @@
 
 </body>
 </html>
-<a href="/Heading/AddHeading" class="btn btn-outline-info">Yeni Başlık Girişi</a>
-
+<a href="/WriterPanel/HeadingAdd" class="btn btn-outline-info">Yeni Başlık Girişi</a>
 

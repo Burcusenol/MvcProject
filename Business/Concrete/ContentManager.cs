@@ -38,6 +38,11 @@ namespace BusinessLayer.Concrete
             return _contentDal.List(c => c.HeadingId == id);
         }
 
+        public List<Content> GetListByWriter()
+        {
+            return _contentDal.List(c => c.WriterId == 4);
+        }
+
         public void Insert(Content content)
         {
             _contentDal.Insert(content);
