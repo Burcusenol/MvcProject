@@ -63,9 +63,11 @@
     <Compile Include="Abstract\IImageFileService.cs" />
     <Compile Include="Abstract\IAuthService.cs" />
     <Compile Include="Abstract\IMessageService.cs" />
+    <Compile Include="Abstract\ITalentService.cs" />
     <Compile Include="Abstract\IWriterService.cs" />
     <Compile Include="Concrete\AboutManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
+    <Compile Include="Concrete\TalentManager.cs" />
     <Compile Include="Concrete\ContactManager.cs" />
     <Compile Include="Concrete\ContentManager.cs" />
     <Compile Include="Concrete\HeadingManager.cs" />

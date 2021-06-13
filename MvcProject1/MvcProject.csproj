@@ -144,6 +144,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
+    <Compile Include="Controllers\TalentController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
     <Compile Include="Controllers\WriterPanelContentController.cs" />
     <Compile Include="Controllers\WriterPanelController.cs" />
@@ -2095,6 +2096,7 @@
     <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\images\5.jpg" />
     <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\images\img1.jpg" />
     <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\images\sprite.png" />
+    <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\images\talentcard.jpg" />
     <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\index.html" />
     <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\js\bars.js" />
     <Content Include="Theme\AdminLTE-3.0.4\Skills_Theme\web\js\easyResponsiveTabs.js" />
@@ -2888,6 +2890,10 @@
     <Content Include="Views\WriterPanelMessage\GetWriterMessageDetails.cshtml" />
     <Content Include="Views\WriterPanelMessage\AddMessage.cshtml" />
     <Content Include="Views\WriterPanelContent\MyContent.cshtml" />
+    <Content Include="Views\Talent\Index.cshtml" />
+    <Content Include="Views\Talent\AddTalent.cshtml" />
+    <Content Include="Views\Talent\UpdateTalent.cshtml" />
+    <Content Include="Views\Talent\TalentCard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
