@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Utilities.Hashing;
 using DataAccess.Abstract;
 using DataAccess.Concrete;
 using Entities.Concrete;
@@ -13,36 +14,44 @@ namespace Business.Concrete
 {
     public class AuthManager : IAuthService
     {
-        ILoginDal _loginDal;
+        IAdminService _adminService;
 
-        public AuthManager(ILoginDal loginDal)
+        public AuthManager(IAdminService adminService)
         {
-            _loginDal = loginDal;
+            _adminService = adminService;
         }
 
-        public void Add(Admin admin)
+        public bool Login(LoginDto loginDto)
         {
-            _loginDal.Insert(admin);
+            using (var hmac = new System.Security.Cryptography.HMACSHA512())
+            {
+                var userNameHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.AdminUserName));
+                var user = _adminService.GetAdmins();
+                foreach (var item in user)
+                {
+                    if (HashingHelper.VerifyPasswordHash(loginDto.AdminUserName, loginDto.AdminPassword, item.AdminUserName, item.AdminPasswordHash, item.AdminPasswordSalt))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
         }
 
-        public void Delete(Admin admin)
+        public void Register(string userName, string password)
         {
-            _loginDal.Delete(admin);
-        }
-
-        public List<Admin> GetAdmins()
-        {
-            return _loginDal.GetAll();
-        }
-
-        public Admin GetById(int id)
-        {
-            return _loginDal.Get(a => a.AdminId == id);
-        }
-
-        public void Update(Admin admin)
-        {
-            _loginDal.Update(admin);
+            byte[] userNameHash, passwordHash, passwordSalt;
+            HashingHelper.CreatePasswordHash(userName, password, out userNameHash, out passwordHash, out passwordSalt);
+            var admin = new Admin
+            {
+                AdminUserName = userNameHash,
+                AdminPasswordHash = passwordHash,
+                AdminPasswordSalt = passwordSalt,
+                AdminRole = "A"
+            };
+            _adminService.Add(admin);
         }
     }
 }
+
+

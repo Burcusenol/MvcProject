@@ -143,6 +143,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\TalentController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
@@ -164,6 +165,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="ScreenShot\Ekran Alıntısı.PNG" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -2894,6 +2896,7 @@
     <Content Include="Views\Talent\AddTalent.cshtml" />
     <Content Include="Views\Talent\UpdateTalent.cshtml" />
     <Content Include="Views\Talent\TalentCard.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

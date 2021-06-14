@@ -1,7 +1,9 @@
-﻿using Business.Concrete;
+﻿using Business.Abstract;
+using Business.Concrete;
 using DataAccess.Concrete;
-using DataAccessLayer.EntityFramework;
+using DataAccess.EntityFramework;
 using Entities.Concrete;
+using Entities.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,7 @@ namespace MvcProject1.Controllers
 {
     public class LoginController : Controller
     {
+        IAuthService authService = new AuthManager(new AdminManager(new EfAdminDal()));
        
         Context context = new Context();
         // GET: Login
@@ -25,24 +28,25 @@ namespace MvcProject1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(Admin admin)
+        public ActionResult Index(LoginDto loginDto)
         {
-            var result = context.Admins.FirstOrDefault(a => a.AdminUserName == admin.AdminUserName &&
-                        a.AdminPassword == admin.AdminPassword);
-            if (result != null)
+
+            if (authService.Login(loginDto))
             {
-                FormsAuthentication.SetAuthCookie(result.AdminUserName, false);
-                Session["AdminUserName"] = result.AdminUserName;
+                FormsAuthentication.SetAuthCookie(loginDto.AdminUserName, false);
+                Session["AdminUserName"] = loginDto.AdminUserName;
                 return RedirectToAction("Index", "AdminCategory");
             }
             else
             {
-                return RedirectToAction("Index");
+                ViewData["ErrorMessage"] = "Kullanıcı adı veya Parola yanlış";
+                return View();
             }
 
         }
         public ActionResult LogOut()
         {
+            //Session.Abandon();
             FormsAuthentication.SignOut();
             return RedirectToAction("Index","Login");
         }

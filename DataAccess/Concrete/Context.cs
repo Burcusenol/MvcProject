@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using Entities.Dto;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -20,6 +21,6 @@ namespace DataAccess.Concrete
         public DbSet<ImageFile> ImageFiles { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Talent> Talents { get; set; }
-
+        
     }
 }

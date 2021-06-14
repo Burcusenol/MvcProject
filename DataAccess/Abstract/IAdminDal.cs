@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface ILoginDal:IRepository<Admin>
+    public interface IAdminDal:IRepository<Admin>
     {
     }
 }

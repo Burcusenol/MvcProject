@@ -1,7 +1,10 @@
-﻿using DataAccess.Concrete;
+﻿using Business.Concrete;
+using DataAccess.Concrete;
+using DataAccess.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Security;
 
@@ -9,6 +12,7 @@ namespace MvcProject1.Roles
 {
     public class AdminRoleProvider : RoleProvider
     {
+        AdminManager adminManager = new AdminManager(new EfAdminDal());
         public override string ApplicationName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public override void AddUsersToRoles(string[] usernames, string[] roleNames)
@@ -38,9 +42,22 @@ namespace MvcProject1.Roles
 
         public override string[] GetRolesForUser(string username)
         {
-            Context context = new Context();
-            var result = context.Admins.FirstOrDefault(u => u.AdminUserName == username);
-            return new string[] { result.AdminRole };
+            using (var hmac = new System.Security.Cryptography.HMACSHA512())
+            {
+                var userNameHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(username));
+                var user = adminManager.GetAdmins();
+                foreach (var item in user)
+                {
+                    for (int i = 0; i < userNameHash.Length; i++)
+                    {
+                        if (userNameHash[i] == item.AdminUserName[i])
+                        {
+                            return new string[] { item.AdminRole };
+                        }
+                    }
+                }
+                return new string[] { };
+            }
         }
 
         public override string[] GetUsersInRole(string roleName)
