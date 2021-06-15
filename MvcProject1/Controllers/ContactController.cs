@@ -16,6 +16,7 @@ namespace MvcProject1.Controllers
         MessageManager messageManager = new MessageManager(new EfMessageDal());
         ContactValidator contactValidation = new ContactValidator();
         // GET: Contact
+       
         public ActionResult Index()
         {
             var contactvalues = contactManager.GetContacts();

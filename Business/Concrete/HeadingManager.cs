@@ -28,9 +28,9 @@ namespace Business.Concrete
             return _headingDal.Get(h => h.HeadingId == id);
         }
 
-        public List<Heading> GetHeadingByWriter()
+        public List<Heading> GetHeadingByWriter(int id)
         {
-            return _headingDal.List(h=>h.WriterId==4);
+            return _headingDal.List(h=>h.WriterId==id);
         }
 
         public List<Heading> GetHeadings()

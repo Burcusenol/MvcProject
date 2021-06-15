@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using DataAccess.Concrete;
 using DataAccess.EntityFramework;
 using Entities.Concrete;
 using System;
@@ -11,17 +12,21 @@ namespace MvcProject1.Controllers
 {
     public class WriterPanelController : Controller
     {
+        Context context = new Context();
         HeadingManager headingManager = new HeadingManager(new EfHeadingDal());
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+        
         // GET: WriterPanel
         public ActionResult WriterProfile()
         {
             return View();
         }
 
-        public ActionResult MyHeading()
+        public ActionResult MyHeading(string param)
         {
-            var result = headingManager.GetHeadingByWriter();
+            param = (string)Session["WriterEmail"];
+            var writerid= context.Writers.Where(w => w.WriterEmail == param).Select(x => x.WriterId).FirstOrDefault();
+            var result = headingManager.GetHeadingByWriter(writerid);
             return View(result);
         }
 
@@ -42,8 +47,10 @@ namespace MvcProject1.Controllers
         [HttpPost]
         public ActionResult HeadingAdd(Heading heading)
         {
+            string deger = (string)Session["WriterEmail"];
+            var writeridhead = context.Writers.Where(w => w.WriterEmail == deger).Select(x => x.WriterId).FirstOrDefault();
             heading.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-            heading.WriterId = 4;
+            heading.WriterId=writeridhead ;
             heading.HeadingStatus = true;
             headingManager.Insert(heading);
             return RedirectToAction("MyHeading");

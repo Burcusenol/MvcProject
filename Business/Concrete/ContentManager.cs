@@ -38,9 +38,9 @@ namespace BusinessLayer.Concrete
             return _contentDal.List(c => c.HeadingId == id);
         }
 
-        public List<Content> GetListByWriter()
+        public List<Content> GetListByWriter(int id)
         {
-            return _contentDal.List(c => c.WriterId == 4);
+            return _contentDal.List(c => c.WriterId == id);
         }
 
         public void Insert(Content content)

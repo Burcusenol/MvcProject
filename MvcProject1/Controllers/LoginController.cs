@@ -15,6 +15,7 @@ using System.Web.Security;
 
 namespace MvcProject1.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         IAuthService authService = new AuthManager(new AdminManager(new EfAdminDal()));
@@ -49,6 +50,26 @@ namespace MvcProject1.Controllers
             //Session.Abandon();
             FormsAuthentication.SignOut();
             return RedirectToAction("Index","Login");
+        }
+
+        [HttpGet]
+        public ActionResult WriterLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult WriterLogin(Writer writer)
+        {
+            var writerinfo = context.Writers.FirstOrDefault(w => w.WriterEmail == writer.WriterEmail && w.WriterPassword == writer.WriterPassword);
+            if (writerinfo != null)
+            {
+                FormsAuthentication.SetAuthCookie(writer.WriterEmail, false);
+                Session["WriterEmail"] = writerinfo.WriterEmail;
+                return RedirectToAction("MyContent","WriterPanelContent");
+            }
+
+            return RedirectToAction("WriterLogin");
         }
     }
 }
