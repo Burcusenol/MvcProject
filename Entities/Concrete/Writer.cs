@@ -22,9 +22,8 @@ namespace Entities.Concrete
 
         [StringLength(200)]
         public string WriterEmail { get; set; }
-
-        [StringLength(200)]
-        public string WriterPassword { get; set; }
+        public byte[] WriterPasswordHash { get; set; }
+        public byte[] WriterPasswordSalt { get; set; }
 
         public bool WriterStatus { get; set; }
 

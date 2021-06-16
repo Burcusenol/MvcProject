@@ -114,6 +114,14 @@
     <Compile Include="Migrations\202106141419185_add-hash.Designer.cs">
       <DependentUpon>202106141419185_add-hash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106161431543_add_writer_hash.cs" />
+    <Compile Include="Migrations\202106161431543_add_writer_hash.Designer.cs">
+      <DependentUpon>202106161431543_add_writer_hash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106161449422_add_writer_hash2.cs" />
+    <Compile Include="Migrations\202106161449422_add_writer_hash2.Designer.cs">
+      <DependentUpon>202106161449422_add_writer_hash2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -157,6 +165,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106141419185_add-hash.resx">
       <DependentUpon>202106141419185_add-hash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106161431543_add_writer_hash.resx">
+      <DependentUpon>202106161431543_add_writer_hash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106161449422_add_writer_hash2.resx">
+      <DependentUpon>202106161449422_add_writer_hash2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

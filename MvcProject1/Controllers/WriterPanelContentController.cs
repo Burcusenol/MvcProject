@@ -21,6 +21,7 @@ namespace MvcProject1.Controllers
             var contentvalues = contentManager.GetListByWriter(writeridinfo);
             return View(contentvalues);
             
+            
         }
     }
 }
