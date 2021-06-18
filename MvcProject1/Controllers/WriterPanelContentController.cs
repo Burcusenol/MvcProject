@@ -1,6 +1,7 @@
-﻿using BusinessLayer.Concrete;
+﻿using Business.Concrete;
 using DataAccess.Concrete;
 using DataAccess.EntityFramework;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +21,27 @@ namespace MvcProject1.Controllers
             var writeridinfo = context.Writers.Where(w => w.WriterEmail == param).Select(x => x.WriterId).FirstOrDefault();
             var contentvalues = contentManager.GetListByWriter(writeridinfo);
             return View(contentvalues);
-            
-            
+
+        }
+
+        [HttpGet]
+        public ActionResult AddContent(int id)
+        {
+            ViewBag.d = id;
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult AddContent(Content content)
+        {
+           string mail = (string)Session["WriterEmail"];
+            var writeridinfo = context.Writers.Where(w => w.WriterEmail == mail).Select(x => x.WriterId).FirstOrDefault();
+            content.ContentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            content.WriterId = writeridinfo;
+            content.ContentStatus = true;
+            contentManager.Insert(content);
+            return RedirectToAction("MyContent");
         }
     }
 }

@@ -50,9 +50,18 @@ namespace MvcProject1.Controllers
         }
         public ActionResult LogOut()
         {
-            //Session.Abandon();
+            
             FormsAuthentication.SignOut();
+            Session.Abandon();
             return RedirectToAction("Index","Login");
+        }
+
+        public ActionResult WriterLogOut()
+        {
+
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Headings", "Default");
         }
 
         [HttpGet]

@@ -95,5 +95,17 @@ namespace MvcProject1.Controllers
             headingManager.Delete(result);
             return RedirectToAction("MyHeading");
         }
+
+
+        public ActionResult AllHeading()
+        {
+            var headings = headingManager.GetHeadings();
+            return View(headings);
+        }
+
+        public ActionResult ToDoList()
+        {
+            return View();
+        }
     }
 }
