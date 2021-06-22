@@ -1,5 +1,7 @@
 ﻿@using Entities.Concrete
-@model List<Heading>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Heading>
 
 @{
     ViewBag.Title = "AllHeading";
@@ -153,6 +155,12 @@
 
 </body>
 </html>
+@Html.PagedListPager((IPagedList)Model,page=>Url.Action("AllHeading",new { page }),new PagedListRenderOptions {
+
+LiElementClasses=new List<string>
+{ "page-link"}
+})
+
 
 
 

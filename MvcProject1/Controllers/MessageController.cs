@@ -19,12 +19,14 @@ namespace MvcProject1.Controllers
         [Authorize]
         public ActionResult Inbox()
         {
+          
             var MessageList = messageManager.GetMessagesInbox();
             return View(MessageList);
         }
 
         public ActionResult SendBox()
         {
+            
             var result = messageManager.GetMessageSendBox();
             return View(result);
         }

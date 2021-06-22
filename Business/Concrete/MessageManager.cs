@@ -35,12 +35,22 @@ namespace Business.Concrete
 
         public List<Message> GetMessageSendBox()
         {
-            return _messageDal.List(m => m.SenderMail == "gizemyıldız@gmail.om");
+            return _messageDal.List(m => m.SenderMail == "admin@gmail.com");
+        }
+
+        public List<Message> GetMessageSendBox(string sender)
+        {
+            return _messageDal.List(m => m.SenderMail == sender);
         }
 
         public List<Message> GetMessagesInbox()
         {
-            return _messageDal.List(m => m.ReceiverMail == "gizemyıldız@gmail.om");
+            return _messageDal.List(m => m.ReceiverMail == "admin@gmail.com");
+        }
+
+        public List<Message> GetMessagesInbox(string receiver)
+        {
+            return _messageDal.List(m => m.ReceiverMail == receiver);
         }
 
         public void Insert(Message message)

@@ -1,5 +1,6 @@
 ﻿using Business.Concrete;
 using Business.FluentValidation;
+using DataAccess.Concrete;
 using DataAccess.EntityFramework;
 using Entities.Concrete;
 using FluentValidation.Results;
@@ -15,6 +16,7 @@ namespace MvcProject1.Controllers
     {
         MessageManager messageManager = new MessageManager(new EfMessageDal());
         MessageValidator messageValidator = new MessageValidator();
+        Context context = new Context();
         // GET: WriterPanelMessage
         public ActionResult Index()
         {
@@ -23,13 +25,15 @@ namespace MvcProject1.Controllers
 
         public ActionResult WriterInbox()
         {
-            var MessageList = messageManager.GetMessagesInbox();
+            string receiver = (string)Session["WriterEmail"];
+            var MessageList = messageManager.GetMessagesInbox(receiver);
             return View(MessageList);
         }
 
         public ActionResult WriterSendBox()
         {
-            var result = messageManager.GetMessageSendBox();
+            string sender = (string)Session["WriterEmail"];
+            var result = messageManager.GetMessageSendBox(sender);
             return View(result);
         }
 
@@ -53,12 +57,13 @@ namespace MvcProject1.Controllers
         [HttpPost]
         public ActionResult AddMessage(Message message, string button)
         {
+            string sender = (string)Session["WriterEmail"];
             ValidationResult validationResult = messageValidator.Validate(message);
             if (button == "add")
             {
                 if (validationResult.IsValid)
                 {
-                    message.SenderMail = "gizemyıldız@gmail.om";
+                    message.SenderMail = sender;
                     message.IsDraft = false;
                     message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                     messageManager.Insert(message);
