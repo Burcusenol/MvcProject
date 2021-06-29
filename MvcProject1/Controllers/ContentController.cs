@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using DataAccess.Concrete;
 using DataAccess.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,12 @@ namespace MvcProject1.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult GetAllContent(string param)
+        {
+             var values = contentManager.GetContents(param);
+             return View(values);
         }
 
         public ActionResult ContentByHeading(int id)

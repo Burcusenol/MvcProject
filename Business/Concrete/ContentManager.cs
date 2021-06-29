@@ -28,6 +28,11 @@ namespace Business.Concrete
              return _contentDal.Get(c => c.ContentId == id);
         }
 
+        public List<Content> GetContents(string param)
+        {
+           return _contentDal.List(c=>c.ContentValue.Contains(param));
+        }
+
         public List<Content> GetContents()
         {
             return _contentDal.GetAll();
