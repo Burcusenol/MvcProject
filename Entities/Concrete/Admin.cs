@@ -10,7 +10,8 @@ namespace Entities.Concrete
     public class Admin
     {
         [Key]
-        public int AdminId { get; set; }   
+        public int AdminId { get; set; }  
+        public string AdminName { get; set; }
         public byte[] AdminUserName { get; set; }
         public byte[] AdminPasswordHash { get; set; }
         public byte[] AdminPasswordSalt { get; set; }

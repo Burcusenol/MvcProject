@@ -24,5 +24,10 @@ namespace MvcProject1.Controllers
             var result = contentManager.GetListByHeadingId(id);
             return PartialView(result);
         }
+
+        public ActionResult SweetAlert()
+        {
+            return View();
+        }
     }
 }

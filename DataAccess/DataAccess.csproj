@@ -122,6 +122,10 @@
     <Compile Include="Migrations\202106161449422_add_writer_hash2.Designer.cs">
       <DependentUpon>202106161449422_add_writer_hash2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107011441396_admin-name-add.cs" />
+    <Compile Include="Migrations\202107011441396_admin-name-add.Designer.cs">
+      <DependentUpon>202107011441396_admin-name-add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -171,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106161449422_add_writer_hash2.resx">
       <DependentUpon>202106161449422_add_writer_hash2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107011441396_admin-name-add.resx">
+      <DependentUpon>202107011441396_admin-name-add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

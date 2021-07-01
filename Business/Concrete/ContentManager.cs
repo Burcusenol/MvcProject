@@ -30,7 +30,15 @@ namespace Business.Concrete
 
         public List<Content> GetContents(string param)
         {
-           return _contentDal.List(c=>c.ContentValue.Contains(param));
+            if (param == null)
+            {
+                return _contentDal.GetAll();
+            }
+            else
+            {
+                return _contentDal.List(c=>c.ContentValue.Contains(param));
+            }
+           
         }
 
         public List<Content> GetContents()

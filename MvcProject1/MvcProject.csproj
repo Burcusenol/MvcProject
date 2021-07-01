@@ -140,7 +140,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminCategoryController.cs" />
+    <Compile Include="Controllers\AuthorizationController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
@@ -161,6 +163,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CaptchaResult.cs" />
+    <Compile Include="Models\CategoryChart.cs" />
+    <Compile Include="Models\TalentChart.cs" />
+    <Compile Include="Models\WriterChart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles\AdminRoleProvider.cs" />
   </ItemGroup>
@@ -3327,6 +3332,13 @@
     <Content Include="Theme\AdminLTE-3.0.4\Ders 89 Vitrin\web\webfonts\fa-solid-900.woff" />
     <Content Include="Theme\AdminLTE-3.0.4\Ders 89 Vitrin\web\webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Content\GetAllContent.cshtml" />
+    <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Heading\HeadingReport.cshtml" />
+    <Content Include="Views\Default\SweetAlert.cshtml" />
+    <Content Include="Views\Authorization\Index.cshtml" />
+    <Content Include="Views\Chart\CategoryPieChart.cshtml" />
+    <Content Include="Views\Chart\WriterColumnChart.cshtml" />
+    <Content Include="Views\Chart\TalentLineChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
