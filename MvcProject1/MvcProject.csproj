@@ -3339,6 +3339,8 @@
     <Content Include="Views\Chart\CategoryPieChart.cshtml" />
     <Content Include="Views\Chart\WriterColumnChart.cshtml" />
     <Content Include="Views\Chart\TalentLineChart.cshtml" />
+    <Content Include="Views\Authorization\AddAdmin.cshtml" />
+    <Content Include="Views\Authorization\UpdateAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

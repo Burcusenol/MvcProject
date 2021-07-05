@@ -59,6 +59,7 @@
     <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\IRoleDal.cs" />
     <Compile Include="Abstract\ITalentDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="EntityFramework\EfImageFileDal.cs" />
     <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EfMessageDal.cs" />
+    <Compile Include="EntityFramework\EfRoleDal.cs" />
     <Compile Include="EntityFramework\EfTalentDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202106041410229_add_image.cs" />
@@ -126,6 +128,18 @@
     <Compile Include="Migrations\202107011441396_admin-name-add.Designer.cs">
       <DependentUpon>202107011441396_admin-name-add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107051306284_admin-status.cs" />
+    <Compile Include="Migrations\202107051306284_admin-status.Designer.cs">
+      <DependentUpon>202107051306284_admin-status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107051354477_add-role.cs" />
+    <Compile Include="Migrations\202107051354477_add-role.Designer.cs">
+      <DependentUpon>202107051354477_add-role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107051406354_add-roles-table.cs" />
+    <Compile Include="Migrations\202107051406354_add-roles-table.Designer.cs">
+      <DependentUpon>202107051406354_add-roles-table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -178,6 +192,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107011441396_admin-name-add.resx">
       <DependentUpon>202107011441396_admin-name-add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107051306284_admin-status.resx">
+      <DependentUpon>202107051306284_admin-status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107051354477_add-role.resx">
+      <DependentUpon>202107051354477_add-role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107051406354_add-roles-table.resx">
+      <DependentUpon>202107051406354_add-roles-table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

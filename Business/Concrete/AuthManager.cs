@@ -49,7 +49,7 @@ namespace Business.Concrete
                 AdminUserName = userNameHash,
                 AdminPasswordHash = passwordHash,
                 AdminPasswordSalt = passwordSalt,
-                AdminRole = "A"
+                RoleId = 2
             };
             _adminService.Add(admin);
         }

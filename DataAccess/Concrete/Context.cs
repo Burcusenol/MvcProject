@@ -21,6 +21,7 @@ namespace DataAccess.Concrete
         public DbSet<ImageFile> ImageFiles { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Talent> Talents { get; set; }
-        
+        public DbSet<Role> Roles { get; set; }
+
     }
 }
