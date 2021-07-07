@@ -153,6 +153,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\TalentController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
@@ -164,6 +165,7 @@
     </Compile>
     <Compile Include="Models\CaptchaResult.cs" />
     <Compile Include="Models\CategoryChart.cs" />
+    <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\TalentChart.cs" />
     <Compile Include="Models\WriterChart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -175,10 +177,21 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Images\Başlıklar.PNG" />
+    <Content Include="Images\Category.PNG" />
+    <Content Include="Images\Galeri.PNG" />
+    <Content Include="Images\Hata Sayfası.PNG" />
+    <Content Include="Images\Profil.PNG" />
+    <Content Include="Images\Raporlar.PNG" />
+    <Content Include="Images\Sözlük.PNG" />
+    <Content Include="Images\Tüm başlıklar.PNG" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Yazar.PNG" />
+    <Content Include="Images\Yazarlar.PNG" />
+    <Content Include="Images\İletişim.PNG" />
     <Content Include="ScreenShot\Ekran Alıntısı.PNG" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -3341,9 +3354,12 @@
     <Content Include="Views\Chart\TalentLineChart.cshtml" />
     <Content Include="Views\Authorization\AddAdmin.cshtml" />
     <Content Include="Views\Authorization\UpdateAdmin.cshtml" />
+    <Content Include="Views\Gallery\AddImage.cshtml" />
+    <Content Include="Views\Schedule\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Gallery\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

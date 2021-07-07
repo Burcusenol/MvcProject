@@ -22,5 +22,10 @@ namespace Business.Concrete
         {
             return _imageFileDal.GetAll();
         }
+
+        public void Insert(ImageFile imageFile)
+        {
+            _imageFileDal.Insert(imageFile);
+        }
     }
 }
