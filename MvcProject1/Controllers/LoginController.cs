@@ -74,7 +74,7 @@ namespace MvcProject1.Controllers
         public ActionResult WriterLogin(WriterLoginDto writerLoginDto)
         {
             var response = Request["g-recaptcha-response"];
-            const string secret = "6Lc9zzgbAAAAAFBGD3Gb201yvNAX4Tb5LAzlqy0d";
+            const string secret = "secretkey";
             var client = new WebClient();
             var reply =
                 client.DownloadString(
